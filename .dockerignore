@@ -1,0 +1,13 @@
+# Ignore all
+**
+
+# Exclude
+!manage.py
+!application/
+!core/
+!requirements.txt
+!Makefile
+!docker/app
+!requirements
+!.env.homework
+

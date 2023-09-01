@@ -1,0 +1,10 @@
+version: '3.9'
+
+
+services:
+  app:
+    build: ../../Documents/homework__nikita__voloshyn__django__basic
+    #    environment:
+    #      - DJANGO__DEBUG=True
+    env_file:
+      - ../../Documents/homework__nikita__voloshyn__django__basic/.env
