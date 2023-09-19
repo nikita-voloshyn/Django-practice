@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика</title>
+</head>
+<body>
+    <h1>Статистика</h1>
+
+    <!-- Вывод статистики -->
+    <p>Самое частое имя: {{ most_common_first_name.first_name }}</p>
+    <p>Самое молодое лицо: {{ youngest_contact.youngest_age }} лет</p>
+    <p>Средний возраст: {{ average_age.average_age }} лет</p>
+    <p>Общий возраст всех контактов: {{ total_age.total_age }} лет</p>
+    <p>Наибольшее количество дубликатов данных: {{ max_duplicate_data_count.count }} раз</p>
+
+    <!-- Кнопка для возврата на домашнюю страницу -->
+    <a href="{% url 'home' %}">Вернуться на домашнюю страницу</a>
+</body>
+</html>
