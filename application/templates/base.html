@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Домашняя страница</title>
+</head>
+<body>
+    <h1>Добро пожаловать!</h1>
+
+    <a href="{% url 'home' %}">Домашняя страница</a><br>
+<main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

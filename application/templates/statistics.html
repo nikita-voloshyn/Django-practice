@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+
+{% block title %}Статистика{% endblock %}
+
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>Статистика</title>
 </head>
 <body>
-    <h1>Статистика</h1>
 
-    <!-- Вывод статистики -->
-    <p>Самое частое имя: {{ most_common_first_name.first_name }}</p>
-    <p>Самое молодое лицо: {{ youngest_contact.youngest_age }} лет</p>
-    <p>Средний возраст: {{ average_age.average_age }} лет</p>
-    <p>Общий возраст всех контактов: {{ total_age.total_age }} лет</p>
-    <p>Наибольшее количество дубликатов данных: {{ max_duplicate_data_count.count }} раз</p>
+    <h2>Статистика</h2>
 
-    <!-- Кнопка для возврата на домашнюю страницу -->
-    <a href="{% url 'home' %}">Вернуться на домашнюю страницу</a>
+<p>Самое частое имя: {{ most_common_first_name.first_name }} ({{ most_common_first_name.count }})</p>
+<p>Средний возраст: {{ average_age.average_age|floatformat:"2" }} лет</p>
+<p>Возраст самого молодого: {{ youngest_contact.youngest_age }} лет</p>
+<p>Возраст самого старого: {{ oldest_contact.oldest_age }} лет</p>
+<p>Общий возраст всех пользователей: {{ total_age.total_age }} лет</p>
+<p>Количество видов "контактных данных" в системе: {{ max_data_type_count }}</p>
+<p>Максимальное количество дублирующихся контактных данных: {{ max_duplicate_data_count }}</p>
 </body>
-</html>
+
+
+{% endblock %}
