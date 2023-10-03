@@ -13,6 +13,11 @@ class Contact(models.Model):
 class ContactData(models.Model):
     contact = models.ForeignKey(Contact, related_name="contact_data", on_delete=models.CASCADE)
     data = models.CharField(max_length=100)
+    DATA_TYPES = (
+        ("phone", "Phone"),
+        ("email", "Email"),
+    )
+    data_type = models.CharField(max_length=10, choices=DATA_TYPES, default="phone")
 
     def __str__(self):
         return self.data

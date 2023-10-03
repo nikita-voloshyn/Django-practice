@@ -1,7 +1,3 @@
-{% extends "base.html" %}
-
-{% block title %}Список пользователей{% endblock %}
-
 {% block content %}
 <head>
     <meta charset="UTF-8">
@@ -10,26 +6,27 @@
 </head>
 <body>
     <h2>Список пользователей</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Имя</th>
-            <th>Фамилия</th>
-            <th>Возраст</th>
-            <th>Количество "контактных данных"</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for user in users %}
+    <p>Общее количество номеров телефона: {{ phone_count }}</p>
+    <p>Общее количество адресов электронной почты: {{ email_count }}</p>
+    <table>
+        <thead>
             <tr>
-                <td>{{ user.first_name }}</td>
-                <td>{{ user.last_name }}</td>
-                <td>{{ user.age }}</td>
-                <td>{{ user.data_count }}</td>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Возраст</th>
+                <th>Количество "контактных данных"</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.age }}</td>
+                    <td>{{ user.data_count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
-
 {% endblock %}

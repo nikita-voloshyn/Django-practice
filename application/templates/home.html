@@ -3,13 +3,7 @@
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
-<head>
-    <meta charset="UTF-8">
-    <title>Домашняя страница</title>
-</head>
-<body>
     <a href="{% url 'generate_users' %}">Сгенерировать пользователей</a><br>
     <a href="{% url 'statistics' %}">Посмотреть статистику</a><br>
     <a href="{% url 'view_users' %}" >Список пользователей</a>
-</body>
 {% endblock %}
