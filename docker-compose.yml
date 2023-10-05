@@ -1,7 +1,7 @@
 version: '3.9'
 
 volumes:
-  postgres_data: {}
+  postgres_data: { }
 
 services:
   app:
@@ -25,5 +25,5 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data:rw
     profiles:
-        - full_dev
-        - local_dev
+      - full_dev
+      - local_dev
